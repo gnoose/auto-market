@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  height: 100%;
+
+  .contact-list {
+    border-radius: 10px;
+    overflow-y: auto;
+
+    .contact {
+      border-bottom: 2px solid rgb(211 211 211 / 20%);
+      .unread-count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        border-radius: 50%;
+        width: 17px;
+        height: 17px;
+        overflow: hidden;
+        background-color: red;
+        color: white;
+        font-size: 11px;
+      }
+      .min-ago {
+        color: grey;
+      }
+    }
+  }
+}
