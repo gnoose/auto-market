@@ -1,0 +1,15 @@
+$flame-pea: #D85D31;
+$wild-sand: #F4F4F4;
+
+$theme-colors: (
+  primary: $flame-pea
+);
+
+// Spacing
+$pixel-spacer: 5px !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+@for $i from 1 through 100 {
+  $spacers: map-merge($spacers, (
+    $i * 5: ($i * $pixel-spacer)
+  ));
+}
