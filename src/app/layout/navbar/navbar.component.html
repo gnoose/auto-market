@@ -1,21 +1,15 @@
-<nav>
-  <a>
-    <!-- TODO: logo -->
-  </a>
-  <ul>
-    <!-- TODO: main nav items -->
-    <li><a></a></li>
-  </ul>
-
-  <div>
-    <!-- TODO: notification quick buttons -->
-  </div>
-
-  <div>
-    <!-- TODO: Profile dropdown section -->
-  </div>
-
-  <div>
-    <button class="btn btn-primary">+ Post ad</button>
+<nav class="navbar navbar-expand-xl bg-color-downriver py-0">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/"><span class="font-weight-bold font-30">auto.market</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
+      Toggle
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav w-100">
+        <li *ngFor="let menu of menus" data-toggle="collapse" data-target="#mainNavbar" class="nav-item font-weight-medium" [routerLink]="menu.route" routerLinkActive="active">
+          <a class="nav-link">{{ menu.label }}</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

@@ -1,0 +1,24 @@
+@import "../../../assets/theme";
+
+.navbar-brand {
+  &:hover {
+    color: inherit;
+  }
+}
+
+ul li {
+  height: 85px;
+  padding: 0 20px;
+  a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+    color: grey;
+  }
+  &.active a {
+    border-bottom-color: $flame-pea;
+    color: black;
+  }
+}

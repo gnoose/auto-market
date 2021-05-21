@@ -7,9 +7,12 @@ const routes: Routes = [
   {
     path: '', component: LayoutComponent,
     children: [
-      {
-        path: '', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule)
-      }
+      { path: '', redirectTo: 'chat', pathMatch: 'full' },
+      { path: 'chat', loadChildren: () => import('./chat/chat.module').then(m => m.ChatModule) },
+      { path: 'sell-car', loadChildren: () => import('./beta/beta.module').then(m => m.BetaModule) },
+      { path: 'buy-car', loadChildren: () => import('./beta/beta.module').then(m => m.BetaModule) },
+      { path: 'market', loadChildren: () => import('./beta/beta.module').then(m => m.BetaModule) },
+      { path: 'contact-us', loadChildren: () => import('./beta/beta.module').then(m => m.BetaModule) },
     ]
   }
 ];
