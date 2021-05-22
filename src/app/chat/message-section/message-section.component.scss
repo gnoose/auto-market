@@ -1,0 +1,53 @@
+@import "../../../assets/theme";
+
+:host {
+  display: block;
+  height: 100%;
+
+  input:focus {
+    outline: none;
+  }
+
+  .message-section {
+    border-radius: 10px;
+
+    .message-div {
+      flex: 1 1 1px;
+      overflow-y: auto;
+    }
+
+    .message_box.justify-content-start {
+      flex-direction: row-reverse;
+      justify-content: flex-end !important;
+    }
+
+    .message_box.justify-content-start .message_content{
+      background: $wild-sand;
+    }
+
+    .message_box.justify-content-end .message_content{
+      background: $flame-pea;
+    }
+
+    .message_box.justify-content-start .message_content:before {
+      content: '';
+      position: absolute;
+      border-width: .25rem 1rem .25rem 0rem;
+      border-style: solid;
+      left: -.5rem;
+      bottom: .3rem;
+      border-color: transparent $wild-sand transparent transparent;
+    }
+
+    .message_box.justify-content-end .message_content:before {
+      content: '';
+      position: absolute;
+      border-width: .25rem 0 .25rem 1rem;
+      border-style: solid;
+      right: -.5rem;
+      bottom: .3rem;
+      border-color: transparent transparent transparent $flame-pea;
+    }
+
+  }
+}

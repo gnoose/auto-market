@@ -2,3 +2,14 @@
   border-radius: 20%;
   overflow: hidden;
 }
+
+.online-circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #35ea35;
+  position: absolute;
+  border: 1px solid white;
+  right: 2px;
+  bottom: 2px;
+}

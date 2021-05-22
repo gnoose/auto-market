@@ -6,10 +6,15 @@
   }
 }
 
+#mainNavbar {
+  z-index: 9;
+}
+
 ul li {
   height: 85px;
   padding: 0 20px;
   a {
+    position: relative;
     display: flex;
     align-items: center;
     height: 100%;
@@ -18,7 +23,111 @@ ul li {
     color: grey;
   }
   &.active a {
-    border-bottom-color: $flame-pea;
     color: black;
+  }
+  @include media-breakpoint-up(xl) {
+    &.active a:after {
+      content: "__";
+      font-size: 24px;
+      color: $flame-pea;
+      position: absolute;
+      bottom: -5px;
+      left: calc(50% - 12px);
+    }
+  }
+}
+
+.navbar-collapse {
+  &.collapsing {
+    height: auto !important;
+  }
+}
+
+.sticky {
+  position: sticky;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  &.has-shadow {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .navbar {
+    padding-top: 20px;
+    .navbar-nav {
+      padding: 0 20px;
+      .nav-item {
+        &.dropdown {
+          height: auto;
+        }
+        &:after {
+          content: none;
+        }
+        .nav-link {
+          padding: 16px;
+          font-size: 16px;
+          letter-spacing: -0.34px;
+          line-height: 23px;
+        }
+        button {
+          margin-top: 25px;
+        }
+        &.static a {
+          font-size: 16px;
+          letter-spacing: -0.25px;
+          line-height: 25px;
+        }
+      }
+    }
+
+    #navbarDropdown {
+      display: none;
+    }
+
+    .dropdown-menu {
+      display: block;
+      background-color: transparent;
+      a.dropdown-item {
+        color: #9CA6B1;
+        font-size: 16px;
+        padding: 16px;
+        letter-spacing: -0.34px;
+        line-height: 23px;
+        &.active, &:hover {
+          color: white;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    background-color: $wild-sand;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    padding: 0 17px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    &.collapsing {
+      height: 100% !important;
+      transform: translateX(-100vw);
+    }
+  }
+}
+
+@include media-breakpoint-between(md, lg) {
+  .navbar-collapse {
+    right: calc(100vw - 400px);
+    &.collapsing {
+      transform: translateX(-400px);
+    }
   }
 }

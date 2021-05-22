@@ -9,6 +9,7 @@ export class AvatarComponent implements OnInit {
 
   @Input() src = '';
   @Input() size = 60;
+  @Input() isOnline = false;
 
   constructor() { }
 

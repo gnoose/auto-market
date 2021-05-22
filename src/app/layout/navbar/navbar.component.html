@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-xl bg-color-downriver py-0">
   <div class="container">
     <a class="navbar-brand" routerLink="/"><span class="font-weight-bold font-30">auto.market</span></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar">
-      Toggle
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <auto-market-icon icon="menu" [width]="16" color="#333"></auto-market-icon>
     </button>
     <div class="collapse navbar-collapse" id="mainNavbar">
       <ul class="navbar-nav w-100">
@@ -10,6 +10,14 @@
           <a class="nav-link">{{ menu.label }}</a>
         </li>
       </ul>
+    </div>
+    <div class="d-none d-xl-block">
+      <a class="btn p-1"><auto-market-icon icon="car" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn p-1"><auto-market-icon icon="star" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn p-1"><auto-market-icon icon="bell" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn p-1"><auto-market-avatar [size]="30"></auto-market-avatar></a>
+      <a class="btn">Semi L <auto-market-icon icon="down-arrow" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn btn-primary">+ Post ad</a>
     </div>
   </div>
 </nav>

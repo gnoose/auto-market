@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from '../../core/services/user.service';
+
 @Component({
   selector: 'auto-market-contact-list',
   templateUrl: './contact-list.component.html',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactListComponent implements OnInit {
 
-  constructor() { }
+  selectedThreadIndex = -1;
+
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  userSelected(user: string, index: number) {
+    this.selectedThreadIndex = index;
+    this.userService.next(user);
   }
 
 }

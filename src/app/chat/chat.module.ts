@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UiKitModule } from '../ui-kit/ui-kit.module';
+import { IconModule } from '../ui-kit/icon/icon.module';
 
 import { ChatRoutingModule } from './chat-routing.module';
 
@@ -18,7 +19,8 @@ import { MessageSectionComponent } from './message-section/message-section.compo
   imports: [
     CommonModule,
     ChatRoutingModule,
-    UiKitModule
+    UiKitModule,
+    IconModule
   ]
 })
 export class ChatModule {

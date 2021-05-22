@@ -1,7 +1,12 @@
-<div class="contact-list bg-white h-100 p-15">
-  <div></div>
-  <div>
-    <div class="contact d-flex align-items-center py-10" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+<div class="contact-list d-flex flex-column bg-white h-100">
+  <div class="p-15">
+    <div class="d-flex justify-content-center bg-info p-10 mb-15 border-radius-10">
+      <input class="border-0 bg-info text-black-50 flex-grow-1" placeholder="Search" />
+      <span><auto-market-icon [width]="18" icon="search" color="#A4A4A4"></auto-market-icon></span>
+    </div>
+  </div>
+  <div class="contact-body me-10">
+    <div class="contact d-flex align-items-center px-10 py-10" [class.active]="selectedThreadIndex === i" (click)="userSelected('Robin Black', i)" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; let i = index">
       <auto-market-avatar></auto-market-avatar>
       <div class="flex-grow-1 d-flex align-items-center justify-content-between">
         <div class="d-flex flex-column ms-15">

@@ -1,3 +1,4 @@
-<div class="avatar" [style.width.px]="size" [style.height.px]="size">
-  <img src="https://i.pravatar.cc/60" alt="Avatar">
+<div class="avatar position-relative" [style.width.px]="size" [style.height.px]="size">
+  <img src="https://i.pravatar.cc/{{size}}" alt="Avatar">
+  <div *ngIf="isOnline" class="online-circle"></div>
 </div>
