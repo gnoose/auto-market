@@ -16,9 +16,11 @@ export class MessageSectionComponent implements OnInit, OnDestroy  {
   messageData = [
     {text: 'Hey, Semi', sender: 'you', time: '09:30 PM'},
     {text: 'How are you today?', sender: 'you', time: '09:30 PM'},
+    {text: '', sender: 'you', time: '09:30 PM'},
     {text: 'Hey, Robin', sender: 'I', time: '09:30 PM'},
     {text: 'Fine, Thanks for asking', sender: 'I', time: '09:30 PM'},
     {text: 'What\'s about you?', sender: 'I', time: '09:30 PM'},
+    {text: '', sender: 'I', time: '09:30 PM'},
   ];
   user: string = '';
   $user: BehaviorSubject<string> = this.userService.user$;

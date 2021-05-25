@@ -1,11 +1,11 @@
 <div class="message-section bg-white h-100 d-flex flex-column">
   <ng-container *ngIf="user !== ''">
-    <div class="d-flex p-15">
+    <div class="d-flex p-25">
       <auto-market-avatar [isOnline]="true"></auto-market-avatar>
       <div class="flex-grow-1 d-flex align-items-center justify-content-between">
         <div class="d-flex flex-column ms-15">
           <span class="font-weight-bold">{{ user }}</span>
-          <p class="fs-8 font-weight-bold"><span class="fs-6 text-primary font-weight-medium">Buyer: </span>Maruti Suzuki Swift Dizire</p>
+          <p class="fs-6 font-weight-medium"><span class="fs-6 text-primary font-weight-medium">Buyer: </span>Maruti Suzuki Swift Dizire</p>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-end">
           <a class="btn"><span><auto-market-icon icon="three-dots"></auto-market-icon></span></a>
@@ -14,35 +14,28 @@
     </div>
     <hr class="m-0">
     <div class="d-flex flex-column flex-grow-1">
-      <div class="message-div p-15 mt-15">
-        <div *ngFor="let item of messageData; let i = index; let isLast = last;" class="message_box d-flex align-items-end mb-10" [class.justify-content-start]="item.sender === 'you'" [class.justify-content-end]="item.sender !== 'you'">
-          <div class="message_content position-relative p-10 text-white border-radius-10" [class.text-black-50]="item.sender === 'you'">
+      <div class="message-div p-25 mt-15">
+        <div *ngFor="let item of messageData; let i = index; let isLast = last; let isFirst = first;" class="message_box d-flex align-items-start mb-10" [class.justify-content-start]="item.sender === 'you'" [class.justify-content-end]="item.sender !== 'you'">
+          <div class="message_content position-relative p-10 text-white border-radius-10 font-weight-medium" [class.text-black]="item.sender === 'you'" [class.none-background]="!item.text">
             <p class="p-0 m-0">
-              {{item.text}}
-            </p>
-            <p class="p-0 m-0 fs-8">
-              {{item.time}}
+              {{ item.text || item.time }}
             </p>
           </div>
-          <div class="mx-10">
-            <ng-container *ngIf="item.sender === 'you'">
-              <auto-market-avatar [size]="30"></auto-market-avatar>
-            </ng-container>
-            <ng-container *ngIf="item.sender !== 'you'">
-              <auto-market-avatar [size]="30"></auto-market-avatar>
-            </ng-container>
+          <div class="mx-10" *ngIf="item.sender === 'you'">
+            <auto-market-avatar *ngIf="isFirst" [size]="30"></auto-market-avatar>
+            <div *ngIf="!isFirst" class="width-30 height-30"></div>
           </div>
         </div>
       </div>
-      <div class="p-15">
+      <div class="p-25">
         <div class="d-flex justify-content-between align-items-center">
-          <div class="flex-grow-1 d-flex align-items-center justify-content-between bg-info border-radius-10 me-20 height-40">
+          <div class="flex-grow-1 d-flex align-items-center justify-content-between bg-info border-radius-10 me-20 height-50">
             <a class="btn"><auto-market-icon [width]="16" icon="smile-emoji" color="#333"></auto-market-icon></a>
             <a class="btn"><auto-market-icon [width]="16" icon="paper-holder" color="#333"></auto-market-icon></a>
-            <input class="flex-grow-1 border-0 bg-info text-black-50 fs-7 width-10" placeholder="Search" />
+            <input class="flex-grow-1 border-0 bg-info text-black-50 fs-7 width-10" placeholder="Write your message..." />
           </div>
           <div>
-            <button class="btn btn-primary d-flex align-items-center px-25"><auto-market-icon class="me-5" icon="sent" color="#FFF"></auto-market-icon><span>Send</span></button>
+            <button class="btn btn-primary d-flex align-items-center px-25 height-50 border-radius-8"><auto-market-icon class="me-5" icon="sent" color="#FFF"></auto-market-icon><span>Send</span></button>
           </div>
         </div>
       </div>
@@ -51,9 +44,9 @@
   <ng-container *ngIf="user === ''">
     <div class="h-100 d-flex align-items-center justify-content-center">
       <div class="text-center">
-        <span><auto-market-icon icon="message" [width]="90" color="#D85D31"></auto-market-icon></span>
+        <span><auto-market-icon icon="index-message" [width]="120" color="#D85D31"></auto-market-icon></span>
         <h4 class="font-weight-bold">Select a Conversation</h4>
-        <p class="text-black-50">try selecting a conversation or searching for<br> someone specific.</p>
+        <p class="text-black-50">Try selecting a conversation or searching for<br> someone specific.</p>
       </div>
     </div>
   </ng-container>

@@ -1,17 +1,17 @@
-<div class="contact-list d-flex flex-column bg-white h-100">
+<div class="contact-list d-flex flex-column bg-white h-100 pb-15">
   <div class="p-15">
     <div class="d-flex justify-content-center bg-info p-10 mb-15 border-radius-10">
-      <input class="border-0 bg-info text-black-50 flex-grow-1" placeholder="Search" />
+      <input class="border-0 bg-info text-black-50 flex-grow-1 width-10" placeholder="Search" />
       <span><auto-market-icon [width]="18" icon="search" color="#A4A4A4"></auto-market-icon></span>
     </div>
   </div>
-  <div class="contact-body me-10">
-    <div class="contact d-flex align-items-center px-10 py-10" [class.active]="selectedThreadIndex === i" (click)="userSelected('Robin Black', i)" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; let i = index">
+  <div class="contact-body me-10 pe-1">
+    <div class="contact d-flex align-items-center px-10 py-10" [class.no-bottom]="isLast" [class.active]="selectedThreadIndex === i" (click)="userSelected('Robin Black', i)" *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; let i = index; let isLast = last;">
       <auto-market-avatar></auto-market-avatar>
       <div class="flex-grow-1 d-flex align-items-center justify-content-between">
         <div class="d-flex flex-column ms-15">
-          <span class="font-weight-medium">Robin Black</span>
-          <span class="fs-7">Last message</span>
+          <span class="font-weight-bold">Robin Black</span>
+          <span class="fs-7">What's about you?</span>
         </div>
         <div class="d-flex flex-column justify-content-center align-items-end">
           <span class="fs-8 min-ago mb-5">3m ago</span>

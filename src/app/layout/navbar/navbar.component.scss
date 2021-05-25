@@ -11,7 +11,7 @@
 }
 
 ul li {
-  height: 85px;
+  height: 100px;
   padding: 0 20px;
   a {
     position: relative;
@@ -21,21 +21,25 @@ ul li {
     border-bottom: 2px solid white;
     cursor: pointer;
     color: grey;
+    font-weight: 600;
   }
   &.active a {
     color: black;
+    font-weight: 700;
   }
   @include media-breakpoint-up(xl) {
     &.active a:after {
       content: "__";
       font-size: 24px;
       color: $flame-pea;
+      font-weight: 800;
       position: absolute;
       bottom: -5px;
       left: calc(50% - 12px);
     }
   }
 }
+
 
 .navbar-collapse {
   &.collapsing {
@@ -130,4 +134,16 @@ ul li {
       transform: translateX(-400px);
     }
   }
+}
+
+.pin-circle {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #D85D31;
+  position: absolute;
+  border: 1px solid white;
+  margin-top: 5px;
+  top: 0;
+  right: 0;
 }

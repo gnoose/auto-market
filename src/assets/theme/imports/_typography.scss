@@ -6,6 +6,10 @@
   font-weight: bold;
 }
 
+.text-black {
+  color: black !important;
+}
+
 @for $i from 5 through 90 {
   .font-#{$i} {
     font-size: #{$i}px;

@@ -5,19 +5,28 @@
       <auto-market-icon icon="menu" [width]="16" color="#333"></auto-market-icon>
     </button>
     <div class="collapse navbar-collapse" id="mainNavbar">
+      <div class="d-flex d-xl-none justify-content-between pt-20 pb-30">
+        <a class="navbar-brand" routerLink="/"><span class="font-weight-bold font-30">auto.market</span></a>
+        <button class="navbar-toggler bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <auto-market-icon icon="close" [width]="16" color="#333"></auto-market-icon>
+        </button>
+      </div>
       <ul class="navbar-nav w-100">
         <li *ngFor="let menu of menus" data-toggle="collapse" data-target="#mainNavbar" class="nav-item font-weight-medium" [routerLink]="menu.route" routerLinkActive="active">
           <a class="nav-link">{{ menu.label }}</a>
         </li>
       </ul>
     </div>
-    <div class="d-none d-xl-block">
-      <a class="btn p-1"><auto-market-icon icon="car" [width]="16" color="#333"></auto-market-icon></a>
-      <a class="btn p-1"><auto-market-icon icon="star" [width]="16" color="#333"></auto-market-icon></a>
-      <a class="btn p-1"><auto-market-icon icon="bell" [width]="16" color="#333"></auto-market-icon></a>
-      <a class="btn p-1"><auto-market-avatar [size]="30"></auto-market-avatar></a>
-      <a class="btn">Semi L <auto-market-icon icon="down-arrow" [width]="16" color="#333"></auto-market-icon></a>
-      <a class="btn btn-primary">+ Post ad</a>
+    <div class="d-none d-xl-flex align-items-center">
+      <a class="btn p-1 mr-5"><auto-market-icon icon="car" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn p-1 mx-5"><auto-market-icon icon="star" [width]="16" color="#333"></auto-market-icon></a>
+      <div class="position-relative d-flex mx-5">
+        <div class="pin-circle"></div>
+        <a class="btn p-1"><auto-market-icon icon="bell" [width]="16" color="#333"></auto-market-icon></a>
+      </div>
+      <a class="btn p-1 ms-5"><auto-market-avatar [size]="40"></auto-market-avatar></a>
+      <a class="btn font-weight-medium ms-5 me-25 p-0">Semi L. <auto-market-icon icon="down-arrow" [width]="16" color="#333"></auto-market-icon></a>
+      <a class="btn btn-primary border-radius-8 px-15 height-40 d-flex align-items-center justify-content-center">+ Post ad</a>
     </div>
   </div>
 </nav>

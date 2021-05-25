@@ -39,3 +39,9 @@
     max-width: #{$i * 5}px !important;
   }
 }
+
+.h-sm-100 {
+  @include media-breakpoint-up(md) {
+    height: 100% !important;
+  }
+}

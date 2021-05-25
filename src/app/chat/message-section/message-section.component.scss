@@ -8,6 +8,11 @@
     outline: none;
   }
 
+  hr {
+    color: lightgray;
+    height: 2px;
+  }
+
   .message-section {
     border-radius: 10px;
 
@@ -21,6 +26,14 @@
       justify-content: flex-end !important;
     }
 
+    .none-background {
+      background: transparent !important;
+      font-weight: normal;
+      color: lightgray !important;
+      font-size: 12px;
+      padding: 0px !important;
+    }
+
     .message_box.justify-content-start .message_content{
       background: $wild-sand;
     }
@@ -29,25 +42,27 @@
       background: $flame-pea;
     }
 
-    .message_box.justify-content-start .message_content:before {
-      content: '';
-      position: absolute;
-      border-width: .25rem 1rem .25rem 0rem;
-      border-style: solid;
-      left: -.5rem;
-      bottom: .3rem;
-      border-color: transparent $wild-sand transparent transparent;
-    }
+    // TODO: once you need pin for the chat owner, enable below css
 
-    .message_box.justify-content-end .message_content:before {
-      content: '';
-      position: absolute;
-      border-width: .25rem 0 .25rem 1rem;
-      border-style: solid;
-      right: -.5rem;
-      bottom: .3rem;
-      border-color: transparent transparent transparent $flame-pea;
-    }
+    //.message_box.justify-content-start .message_content:before {
+    //  content: '';
+    //  position: absolute;
+    //  border-width: .25rem 1rem .25rem 0rem;
+    //  border-style: solid;
+    //  left: -.5rem;
+    //  bottom: .3rem;
+    //  border-color: transparent $wild-sand transparent transparent;
+    //}
+    //
+    //.message_box.justify-content-end .message_content:before {
+    //  content: '';
+    //  position: absolute;
+    //  border-width: .25rem 0 .25rem 1rem;
+    //  border-style: solid;
+    //  right: -.5rem;
+    //  bottom: .3rem;
+    //  border-color: transparent transparent transparent $flame-pea;
+    //}
 
   }
 }

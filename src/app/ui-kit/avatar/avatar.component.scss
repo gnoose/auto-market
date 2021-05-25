@@ -1,15 +1,15 @@
 .avatar {
-  border-radius: 20%;
+  border-radius: 35%;
   overflow: hidden;
 }
 
 .online-circle {
-  width: 7px;
-  height: 7px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: #35ea35;
   position: absolute;
-  border: 1px solid white;
-  right: 2px;
-  bottom: 2px;
+  border: 2px solid white;
+  right: 0;
+  bottom: 0;
 }
